@@ -1,10 +1,24 @@
 <app-header
   (option)="onOption($event)"
-  (search)="onSearchOption($event)"></app-header>
+  (search)="onSearchOption($event)"
+  (reset)="onReset($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-4" *ngFor="let image of images">
-      <img src="{{image.largeImageURL}}" alt="" class="img-thumbnail">
+    <div class="col-4 mb-3" *ngFor="let image of images">
+      <div class="card" style="">
+        <img src="{{image.largeImageURL}}" alt="" class="card-img-top" >
+        <div class="card-body">
+          <p class="card-text">
+            Tags: {{image.tags}}
+          </p>
+          <p>
+            <i class="fas fa-thumbs-up"></i> {{image.likes}}
+          </p>
+          <p>
+            <i class="far fa-eye"></i> {{image.views}}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

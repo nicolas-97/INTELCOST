@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
 
   category:String="";
   search:String="";
+
   title = 'INTELCOST';
 
   images=[];
@@ -22,27 +23,32 @@ export class AppComponent implements OnInit{
 
   loadImages(){
     this.pixaService.get().subscribe(res=>{
+      console.log(res)
       this.images=res.hits;
     });
   }
 
-  loadCategory(){
-    this.pixaService.getCategory(this.category).subscribe(res=>{
+  loadCategory(event){
+    this.pixaService.getCategory(event).subscribe(res=>{
       this.images=res.hits;
     });
   }
 
-  loadSearch(){
-    this.pixaService.getSearch(this.search).subscribe(res=>{
+  loadSearch(event){
+    this.pixaService.getSearch(event).subscribe(res=>{
       this.images=res.hits;
     });
   }
 
   onOption(event){
-    this.category=event;
+    this.loadCategory(event);
   }
 
   onSearchOption(event){
-    this.search=event;
+    this.loadSearch(event);
+  }
+
+  onReset(event){
+    this.ngOnInit();
   }
 }

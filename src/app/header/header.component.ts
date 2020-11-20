@@ -9,6 +9,8 @@ export class HeaderComponent implements OnInit {
 
   @Output() option = new EventEmitter<String>();
   @Output() search = new EventEmitter<String>();
+  @Output() reset = new EventEmitter<boolean>();
+
   searchWord:String="";
 
 
@@ -22,5 +24,9 @@ export class HeaderComponent implements OnInit {
   }
   selectOption(option){
     this.option.next(option);
+  }
+
+  logoAction(){
+    this.reset.next(true);
   }
 }
