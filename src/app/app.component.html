@@ -1,4 +1,10 @@
-<app-header></app-header>
+<app-header
+  (option)="onOption($event)"
+  (search)="onSearchOption($event)"></app-header>
 <div class="container">
-  <app-imageSearch></app-imageSearch>
+  <div class="row">
+    <div class="col-4" *ngFor="let image of images">
+      <img src="{{image.largeImageURL}}" alt="" class="img-thumbnail">
+    </div>
+  </div>
 </div>

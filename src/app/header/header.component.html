@@ -6,28 +6,28 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Science</a>
+      <li class="nav-item ">
+        <a class="nav-link" href="#" (click)="selectOption('science')">Science</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Education</a>
+        <a class="nav-link" href="#" (click)="selectOption('education')">Education</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">People</a>
+        <a class="nav-link" href="#" (click)="selectOption('people')">People</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Feelings</a>
+        <a class="nav-link" href="#" (click)="selectOption('feelings')">Feelings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Computer</a>
+        <a class="nav-link" href="#" (click)="selectOption('computer')">Computer</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Buildings</a>
+        <a class="nav-link" href="#" (click)="selectOption('building')">Buildings</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchWord" name="searchWord">
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchButton()">Search</button>
     </form>
   </div>
 </nav>

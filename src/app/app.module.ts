@@ -4,15 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ImageSearchComponent } from './imageSearch/imageSearch.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       HeaderComponent,
-      ImageSearchComponent
    ],
   imports: [
+    CommonModule,
+    FormsModule,
+    BrowserModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
